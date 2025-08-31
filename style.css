@@ -1,0 +1,65 @@
+* {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body {
+      display:flex;justify-content:center;align-items:center;
+      height:100vh;background:var(--bg-color);
+      transition:background 0.3s ease,color 0.3s ease;
+    }
+    :root {
+      --bg-color:#121212;--card-color:#1e1e1e;--text-color:#fff;
+      --input-bg:#2a2a2a;--btn-color:#00bcd4;
+      --error-color:#ff5252;--link-color:#00bcd4;
+    }
+    body.light {
+      --bg-color:#f0f0f0;--card-color:#fff;--text-color:#000;
+      --input-bg:#e9e9e9;--btn-color:#3f51b5;
+      --error-color:#d32f2f;--link-color:#3f51b5;
+    }
+    .container {
+      background:var(--card-color);padding:30px;border-radius:20px;
+      box-shadow:0 15px 25px rgba(0,0,0,0.5);width:350px;text-align:center;
+      transform:perspective(1000px) rotateX(5deg) rotateY(5deg);
+      transition:transform 0.5s ease;
+    }
+    .container:hover {transform:perspective(1000px) rotateX(0) rotateY(0) scale(1.02);}
+    h2 {margin-bottom:15px;color:var(--text-color);}
+    .input-box {position:relative;margin-bottom:10px;}
+    .input-box input {
+      width:100%;padding:12px 45px 12px 15px;border:none;outline:none;
+      border-radius:10px;background:var(--input-bg);color:var(--text-color);
+      font-size:16px;box-shadow:inset 2px 2px 5px rgba(0,0,0,0.5),
+      inset -2px -2px 5px rgba(255,255,255,0.1);
+    }
+    .input-box i {
+      position:absolute;right:15px;top:50%;transform:translateY(-50%);
+      color:var(--text-color);cursor:pointer;
+    }
+    .error {font-size:13px;color:var(--error-color);margin-bottom:8px;
+      text-align:left;padding-left:5px;display:none;}
+    .btn {
+      width:100%;padding:12px;background:var(--btn-color);border:none;
+      outline:none;border-radius:10px;color:#fff;font-size:16px;
+      cursor:pointer;transition:0.3s ease;margin-top:10px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    }
+    .btn:hover {transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.4);}
+    .links {margin-top:15px;font-size:14px;display:flex;justify-content:space-between;}
+    .links a {color:var(--link-color);text-decoration:none;cursor:pointer;}
+    .links a:hover {text-decoration:underline;}
+    .toggle-mode {
+      margin-top:15px;font-size:14px;color:var(--text-color);
+      cursor:pointer;text-decoration:underline;
+    }
+    .form-box {display:none;}
+    .form-box.active {display:block;}
+
+    /* Responsive Design */
+@media (max-width: 480px) {
+  .btn {
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+
+  .display {
+    font-size: 2rem;
+  }
+}
